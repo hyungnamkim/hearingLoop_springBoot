@@ -1,0 +1,54 @@
+{{>layouts/header}}
+<form class="container" action="/articles/create" method="post">
+    <div class="mb-3">
+        <label class="form-label">송출키오스크</label>
+        <input type="text" class="form-control" name="broadcastKiosk">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">광고명칭</label>
+        <input type="text" class="form-control" name="adName">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">광고형태</label>
+        <input type="text" class="form-control" name="adType">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">노출시간</label>
+        <input type="number" class="form-control" name="exposureTime">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">일당노출횟수</label>
+        <input type="number" class="form-control" name="dailyExposureCount">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" >시작일</label>
+        <input type="date" class="form-control" name="startDate">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">종료일</label>
+        <input type="date" class="form-control" name="endDate">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">비고</label>
+        <input type="text" class="form-control" name="notes">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">송출중</label>
+        <input type="checkbox" class="form-check-input" name="isActive">
+    </div>
+<!--    <div class="mb-3">-->
+<!--        <label for="attachFile" class="form-label">첨부파일</label>-->
+<!--        <input type="file" class="form-control" id="attachFile" name="attachFile">-->
+<!--        <div class="form-text">최대 파일 크기: 10MB</div>-->
+<!--    </div>-->
+
+<!--    <div class="mb-3">-->
+<!--        <label for="imageFiles" class="form-label">이미지 파일들</label>-->
+<!--        <input type="file" class="form-control" id="imageFiles" name="imageFiles" multiple="multiple">-->
+<!--        <div class="form-text">여러 이미지 선택 가능</div>-->
+<!--    </div>-->
+
+    <button type="submit" class="btn btn-primary">제출</button>
+    <a href="/articles">Back</a>
+</form>
+{{>layouts/footer}}

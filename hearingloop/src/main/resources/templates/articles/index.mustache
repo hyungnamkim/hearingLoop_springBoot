@@ -1,0 +1,50 @@
+
+
+{{>layouts/header}}
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">키오스크명</th>
+        <th scope="col">광고명</th>
+        <th scope="col">광고종류</th>
+        <th scope="col">노출시간</th>
+        <th scope="col">노출횟수</th>
+        <th scope="col">시작시간</th>
+        <th scope="col">종료시간</th>
+        <th scope="col">비고</th>
+        <th scope="col">광고운영중</th>
+
+    </tr>
+    </thead>
+    <tbody>
+{{#articleList}}
+    <tr onclick="location.href='articles/{{id}}'" style="cursor: pointer;">
+            <th scope="row">{{id}}</th>
+            <td>{{broadcastKiosk}}</td>
+            <td>{{adName}}</td>
+            <td>{{adType}}</td>
+            <td>{{exposureTime}}</td>
+            <td>{{dailyExposureCount}}</td>
+            <td>{{startDate}}</td>
+            <td>{{endDate}}</td>
+            <td>{{notes}}</td>
+            <td>{{isActive}}</td>
+    </tr>
+
+    <text>첨부파일(클릭시 다운) : </text>
+    <a th:if="${articleList.attachFile}" th:href="|/basic-board/attach/${content.id}|" th:text="${articleList.attachFile.uploadFilename}" />
+    <br/><br/>
+    <text>첨부된 이미지 파일들</text>
+    <br/>
+    <img th:each="imageFile : ${articleList.imageFiles}" th:src="|/basic-board/images/${imageFile.storeFilename}|" width="100px" height="100px" style="border-color: black; border-style: solid; border-width: thin;"/>
+    <br/><br/>
+{{/articleList}}
+
+    </tbody>
+</table>
+<a href="/articles/new">New Article</a>
+
+{{>layouts/footer}}

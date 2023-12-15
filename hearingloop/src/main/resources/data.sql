@@ -1,0 +1,24 @@
+--
+-- CREATE TABLE advertisement (
+-- id BIGINT AUTO_INCREMENT PRIMARY KEY,
+-- broadcast_kiosk VARCHAR(255),
+-- ad_name VARCHAR(255),
+-- ad_type VARCHAR(255),
+-- exposure_time INT,
+-- daily_exposure_count INT,
+-- start_date DATE,
+-- end_date DATE,
+-- notes TEXT,
+-- is_active BOOLEAN
+-- );
+--
+-- INSERT INTO advertisement (broadcast_kiosk, ad_name, ad_type, exposure_time, daily_exposure_count, start_date, end_date, notes, is_active) VALUES
+-- ('공통', '서울_01', '영상', 30, 100, '2023-12-04', '2023-12-31', '클릭', true),
+-- ('공통', '노동부_51', '영상/음성', 20, 100, '2023-12-04', '2023-12-31', '클릭', true),
+-- ('K-06', '행안부_1001', '이미지', 10, 100, '2023-12-04', '2023-12-31', '클릭', true),
+-- ('공통', '한강축제지원단_01', '이미지/음성', 10, 100, '2023-12-04', '2023-12-31', '클릭', true),
+-- ('공통', '경찰청_002', '영상', 20, 200, '2023-12-04', '2023-12-31', '클릭', true),
+-- ('공통', '총리실_1', '음성', 20, 200, '2023-12-01', '2023-12-31', '클릭', false),
+-- ('K-01, K-05', '전라남도_99', '영상', 20, 200, '2023-12-04', '2023-12-31', '클릭', false),
+-- ('공통', 'Default 영상', '이미지', 20, 200, '2023-12-04', '2023-12-31', '클릭', false);
+--

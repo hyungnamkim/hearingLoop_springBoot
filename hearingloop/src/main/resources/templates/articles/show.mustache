@@ -1,0 +1,41 @@
+{{>layouts/header}}
+{{#article}}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">키오스크명</th>
+        <th scope="col">광고명</th>
+        <th scope="col">광고종류</th>
+        <th scope="col">노출시간</th>
+        <th scope="col">노출횟수</th>
+        <th scope="col">시작시간</th>
+        <th scope="col">종료시간</th>
+        <th scope="col">비고</th>
+        <th scope="col">광고운영중</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">{{id}}</th>
+        <td>{{broadcastKiosk}}</td>
+        <td>{{adName}}</td>
+        <td>{{adType}}</td>
+        <td>{{exposureTime}}</td>
+        <td>{{dailyExposureCount}}</td>
+        <td>{{startDate}}</td>
+        <td>{{endDate}}</td>
+        <td>{{notes}}</td>
+        <td>{{isActive}}</td>
+    </tr>
+
+    </tbody>
+</table>
+<a href="/articles/{{id}}/edit" class="btn btn-primary">Edit</a>
+<a href="/articles/{{id}}/delete" class="btn btn-danger">Delete</a>
+<a href="/articles" class="btn btn-primary">Go to Article List</a>
+{{/article}}
+
+{{>layouts/footer}}

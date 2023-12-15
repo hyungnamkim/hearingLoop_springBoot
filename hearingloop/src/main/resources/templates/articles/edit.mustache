@@ -1,0 +1,112 @@
+<!--{{>layouts/header}}-->
+<!--{{#article}}-->
+<!--<form class="container" action="/articles/update" method="post">-->
+<!--    <input name="id" type="hidden" value="{{id}}">-->
+<!--    <div class="mb-3">-->
+<!--        <label class="form-label">송출키오스크</label>-->
+<!--        <input type="text" class="form-control" name="broadcastKiosk" value="{{broadcastKiosk}}">-->
+<!--    </div>-->
+<!--    <div class="mb-3">-->
+<!--        <label class="form-label">광고명칭</label>-->
+<!--        <input type="text" class="form-control" name="adName" value="{{adName}}">-->
+<!--    </div>-->
+<!--    <div class="mb-3">-->
+<!--        <label class="form-label">광고형태</label>-->
+<!--        <input type="text" class="form-control" name="adType" value="{{adType}}">-->
+<!--    </div>-->
+<!--    <div class="mb-3">-->
+<!--        <label class="form-label">노출시간</label>-->
+<!--        <input type="number" class="form-control" name="exposureTime" value="{{exposureTime}}">-->
+<!--    </div>-->
+<!--    <div class="mb-3">-->
+<!--        <label class="form-label">일당노출횟수</label>-->
+<!--        <input type="number" class="form-control" name="dailyExposureCount" value="{{dailyExposureCount}}">-->
+<!--    </div>-->
+<!--    <div class="mb-3">-->
+<!--        <label class="form-label" >시작일</label>-->
+<!--        <input type="date" class="form-control" name="startDate" value="{{StartDate}}">-->
+<!--    </div>-->
+<!--    <div class="mb-3">-->
+<!--        <label class="form-label">종료일</label>-->
+<!--        <input type="date" class="form-control" name="endDate" value="{{EndDate}}">-->
+<!--    </div>-->
+<!--    <div class="mb-3">-->
+<!--        <label class="form-label">비고</label>-->
+<!--        <input type="text" class="form-control" name="notes" value="{{notes}}">-->
+<!--    </div>-->
+<!--    <div class="mb-3">-->
+<!--        <label class="form-label">송출중</label>-->
+<!--        <input type="checkbox" class="form-check-input" name="isActive" value="true" checked>-->
+<!--    </div>-->
+<!--    <button type="submit" class="btn btn-primary">제출</button>-->
+<!--    <a href="/articles/{{id}}">Back</a>-->
+<!--</form>-->
+<!--{{/article}}-->
+<!--{{>layouts/footer}}-->
+
+
+{{>layouts/header}}
+{{#article}}
+    <form class="container" action="/articles/update" method="post" name="adForm" onsubmit="return validateForm()">
+        <input name="id" type="hidden" value="{{id}}">
+        <div class="mb-3">
+            <label class="form-label">송출키오스크</label>
+            <input type="text" class="form-control" name="broadcastKiosk" value="{{broadcastKiosk}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">광고명칭</label>
+            <input type="text" class="form-control" name="adName" value="{{adName}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">광고형태</label>
+            <input type="text" class="form-control" name="adType" value="{{adType}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">노출시간</label>
+            <input type="number" class="form-control" name="exposureTime" value="{{exposureTime}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">일당노출횟수</label>
+            <input type="number" class="form-control" name="dailyExposureCount" value="{{dailyExposureCount}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" >시작일</label>
+            <input type="date" class="form-control" name="startDate" value="{{StartDate}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">종료일</label>
+            <input type="date" class="form-control" name="endDate" value="{{EndDate}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">비고</label>
+            <input type="text" class="form-control" name="notes" value="{{notes}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">송출중</label>
+            <input type="checkbox" class="form-check-input" name="isActive" value="true" checked>
+        </div>
+        <button type="submit" class="btn btn-primary">제출</button>
+        <a href="/articles/{{id}}">Back</a>
+    </form>
+{{/article}}
+<script>
+    function validateForm() {
+        var broadcastKiosk = document.forms["adForm"]["broadcastKiosk"].value;
+        var adName = document.forms["adForm"]["adName"].value;
+        var adType = document.forms["adForm"]["adType"].value;
+        var exposureTime = document.forms["adForm"]["exposureTime"].value;
+        var dailyExposureCount = document.forms["adForm"]["dailyExposureCount"].value;
+        var startDate = document.forms["adForm"]["startDate"].value;
+        var endDate = document.forms["adForm"]["endDate"].value;
+        var notes = document.forms["adForm"]["notes"].value;
+
+        if (broadcastKiosk === "" || adName === "" || adType === "" ||
+                exposureTime === "" || dailyExposureCount === "" ||
+                startDate === "" || endDate === "" || notes === "") {
+            alert("모든 데이터를 입력하세요.");
+            return false;
+        }
+        return true;
+    }
+</script>
+{{>layouts/footer}}
