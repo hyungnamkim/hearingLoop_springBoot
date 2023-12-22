@@ -27,8 +27,10 @@ public class ArticleForm {
     private Boolean isActive;
 
     public Article toEntity() {
-        return new Article(id, broadcastKiosk, adName, adType, exposureTime, dailyExposureCount, startDate, endDate, notes, isActive);
+        // 새 게시물의 경우 id를 null로 설정하여 데이터베이스가 자동으로 id를 생성하도록 함
+        return new Article(null, broadcastKiosk, adName, adType, exposureTime, dailyExposureCount, startDate, endDate, notes, isActive);
     }
+
 
     // Lombok이 자동으로 세터, 게터, toString 등을 생성합니다.
 }

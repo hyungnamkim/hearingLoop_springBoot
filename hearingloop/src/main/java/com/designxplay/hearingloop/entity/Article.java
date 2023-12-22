@@ -11,8 +11,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table
-@ToString
-@Getter
 @Data // Lombok의 @Data 어노테이션을 사용
 public class Article {
     @Id
