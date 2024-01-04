@@ -25,10 +25,12 @@ public class ArticleForm {
 
     private String notes;
     private Boolean isActive;
+    // 추가된 부분: 여러 이미지 파일을 위한 리스트
+    private List<MultipartFile> imageFiles;
 
     public Article toEntity() {
         // 새 게시물의 경우 id를 null로 설정하여 데이터베이스가 자동으로 id를 생성하도록 함
-        return new Article(null, broadcastKiosk, adName, adType, exposureTime, dailyExposureCount, startDate, endDate, notes, isActive);
+        return new Article(id, broadcastKiosk, adName, adType, exposureTime, dailyExposureCount, startDate, endDate, notes, isActive, null);
     }
 
 

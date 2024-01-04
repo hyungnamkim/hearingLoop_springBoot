@@ -41,6 +41,44 @@ public class Article {
     private String notes;
     @Column
     private Boolean isActive;
+    @ElementCollection
+    private List<String> fileNames; // 파일 이름을 저장할 리스트 필드 추가
 
 
+    public void patch(Article article) {
+        if(article.broadcastKiosk != null)
+        {
+            this.broadcastKiosk = article.broadcastKiosk;
+        }
+        if(article.adName != null)
+        {
+            this.adName = article.adName;
+        }if(article.adType != null)
+        {
+            this.adType = article.adType;
+        }if(article.exposureTime != null)
+        {
+            this.exposureTime = article.exposureTime;
+        }if(article.dailyExposureCount != null)
+        {
+            this.dailyExposureCount = article.dailyExposureCount;
+        }if(article.startDate != null)
+        {
+            this.startDate = article.startDate;
+        }if(article.endDate != null)
+        {
+            this.endDate = article.endDate;
+        }if(article.notes != null)
+        {
+            this.notes = article.notes;
+        }if(article.isActive != null)
+        {
+            this.isActive = article.isActive;
+        }
+
+        if(article.fileNames != null)
+        {
+            this.fileNames = article.fileNames;
+        }
+    }
 }

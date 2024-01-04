@@ -33,9 +33,16 @@
 
     </tbody>
 </table>
+<div>
+    <h3>Attached Images</h3>
+    {{#fileUrls}} <!-- 이미지 URL들의 배열을 반복 -->
+        <img src="{{this}}" class="img-thumbnail" alt="Attached Image" style="max-width: 200px; max-height: 200px;">
+    {{/fileUrls}} <!-- 배열 반복 종료 -->
+</div>
 <a href="/articles/{{id}}/edit" class="btn btn-primary">Edit</a>
 <a href="/articles/{{id}}/delete" class="btn btn-danger">Delete</a>
 <a href="/articles" class="btn btn-primary">Go to Article List</a>
 {{/article}}
 
+{{>comments/_comments}}
 {{>layouts/footer}}

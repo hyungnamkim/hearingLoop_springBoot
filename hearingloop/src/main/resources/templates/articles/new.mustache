@@ -1,5 +1,5 @@
 {{>layouts/header}}
-<form class="container" action="/articles/create" method="post">
+<form class="container" action="/articles/create" method="post" enctype="multipart/form-data">
     <div class="mb-3">
         <label class="form-label">송출키오스크</label>
         <input type="text" class="form-control" name="broadcastKiosk">
@@ -44,11 +44,11 @@
 <!--        <div class="form-text">최대 파일 크기: 10MB</div>-->
 <!--    </div>-->
 
-<!--    <div class="mb-3">-->
-<!--        <label for="imageFiles" class="form-label">이미지 파일들</label>-->
-<!--        <input type="file" class="form-control" id="imageFiles" name="imageFiles" multiple="multiple">-->
-<!--        <div class="form-text">여러 이미지 선택 가능</div>-->
-<!--    </div>-->
+    <div class="mb-3">
+        <label for="imageFiles" class="form-label">이미지 파일들</label>
+        <input type="file" class="form-control" id="imageFiles" name="imageFiles" multiple="multiple">
+        <div class="form-text">여러 이미지 선택 가능</div>
+    </div>
 
     <button type="submit" class="btn btn-primary">제출</button>
     <a href="/articles">Back</a>
